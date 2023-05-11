@@ -37,7 +37,7 @@ urlpatterns = [
     path('notifications/', include('notification.urls')),
     path('chats/', include('chat.urls')),
     path('friend/', include('friend.urls', namespace='friend')),
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
