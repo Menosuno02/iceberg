@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ["https://iceberg-social.herokuapp.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://iceberg-social.herokuapp.com"]
 
 
 # Application definition
