@@ -21,6 +21,7 @@
       <div class="navbar-nav mr-auto">
         <div id="searchbar">
           <form method="get" action="{% url 'search' %}">
+            {% csrf_token %}
             <input required
                     name="query"
                     id="search"

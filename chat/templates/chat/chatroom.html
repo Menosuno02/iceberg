@@ -56,6 +56,7 @@
       <br>
       <div class="px-0">
         <form class="bg-light chat-form">
+          {% csrf_token %}
           <div class="input-group">
             <input id="input"
                     name="body"
