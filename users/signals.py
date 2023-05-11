@@ -1,8 +1,10 @@
-from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import Profile, Relationship
+
 from friend.models import FriendList
+
+from .models import Profile, Relationship
 
 """ Crea perfil cuando usuario crea cuenta """
 @receiver(post_save, sender=User)

@@ -1,8 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.fields.related import ForeignKey
 from django.utils import timezone
-from django.contrib.auth.models import User
-
 
 """ Lista de amigos """
 class FriendList(models.Model):
