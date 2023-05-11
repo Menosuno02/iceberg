@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Registrarse
+{% endblock title %}
+{% block content %}
+  <div class="m-auto col-md-8">
+    <div class="content-section">
+      <h3 class="border-bottom pb-3 mb-4">Únete a Iceberg</h3>
+      <form action="" method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          {{ form|crispy }}
+          <script src="https://www.google.com/recaptcha/api.js"></script>
+          <div class="g-recaptcha"
+                data-sitekey="6LcBguklAAAAABKTLldXyC9CGNqV4B1_V4CiwhHI"></div>
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-primary" type="submit">Registrarse</button>
+        </div>
+      </form>
+      <div class="border-top pt-3 pb-2">
+        <small class="text-muted">
+          ¿Ya tienes cuenta? <a class="ml-2" href="{% url 'account_login' %}">Inicia sesión</a>
+        </small>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

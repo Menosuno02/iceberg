@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block title %}
+  Cerrar sesión
+{% endblock title %}
+{% block content %}
+  <div class="container">
+    <h2>Cerraste sesión</h2>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        <a href="{% url 'account_login' %}">Volver a iniciar sesión</a>
+      </small>
+    </div>
+  </div>
+{% endblock content %}

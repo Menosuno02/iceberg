@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	function declineFriendRequest(friend_request_id, uiUpdateFunction){
+		var url = "{% url 'friend:friend-request-decline' friend_request_id=53252623623632623 %}".replace("53252623623632623", friend_request_id)
+		$.ajax({
+			type: 'GET',
+			dataType: "json",
+			url: url,
+			timeout: 5000,
+			success: function(data) {
+				console.log("Éxito", data)
+				if(data['response'] == "Solicitud de amistad declinada"){
+				}
+				else if(data['response'] != null)
+					alert(data['response'])
+			},
+			error: function(data) {
+				console.error("Error", data);
+				alert("Algo fue mal");
+			},
+			complete: function(data){
+				uiUpdateFunction();
+			}
+		});
+	}
+</script>

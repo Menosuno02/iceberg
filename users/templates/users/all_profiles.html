@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block title %}
+  Perfiles
+{% endblock title %}
+{% block content %}
+  <div class="col-md-8 m-auto">
+    {% for profile in profiles %}
+      <div class="compact-user-section">
+        <a href="{% url 'profile-detail-view' profile.pk %}">{{ profile }}</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

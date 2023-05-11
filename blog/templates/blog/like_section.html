@@ -1,0 +1,25 @@
+<form action="{% url 'post-like' %}" method="post">
+  {% csrf_token %}
+  {% if user.is_authenticated %}
+    {% if liked %}
+      <button id="like"
+              type="submit"
+              name="post_id"
+              value="{{ post.id }}"
+              class="btn btnhrt">
+        <i class="fas fa-heart"></i>
+      </button>
+    {% else %}
+      <button id="like"
+              type="submit"
+              name="post_id"
+              value="{{ post.id }}"
+              class="btn btnhrt">
+        <i class="far fa-heart"></i>
+      </button>
+    {% endif %}
+  {% else %}
+    <small>Inicia sesión para dar me gusta</small>
+  {% endif %}
+  {{ total_likes }} Me gusta{{ total_likes|pluralize }}
+</form>
