@@ -11,10 +11,8 @@
 			timeout: 5000,
 			data: payload,
 			success: function(data) {
-				console.log("Éxito", data)
-				if(data['response'] == "Amigo eliminado"){
-				}
-				else if(data['response'] != null)
+				console.log("Éxito", data);
+				if (data['response'] != "Amigo eliminado" && data['response'] != null)
 					alert(data['response']);
 			},
 			error: function(data) {

@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Noto+Sans:wght@300&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Open+Sans&family=Noto+Sans:wght@300&display=swap";
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0
 }
 
 body {
     background: #f7f7f7;
     color: #333;
-    margin-top: 6rem;
-    scroll-behavior: smooth;
     font-family: "Open Sans", sans-serif !important;
-    /*font-weight: 500;*/
+    margin-top: 6rem;
+    scroll-behavior: smooth
 }
 
 h1,
@@ -21,379 +20,389 @@ h3,
 h4,
 h5,
 h6 {
-    color: #444;
+    color: #444
 }
 
 ul {
-    margin: 0;
     list-style-type: none;
+    margin: 0
 }
 
 a {
-    -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
-    transition: .3s all ease;
+    -webkit-transition: .3s all ease;
+    transition: .3s all ease
 }
 
 a,
 a:hover {
-    text-decoration: none !important;
-}
-
-.asteriskField {
-    color: #ff1414;
+    text-decoration: none !important
 }
 
 .bg-nav {
-    background: #0088ff;
-    box-shadow: 0 0 16px rgba(0, 0, 0, .3);
+    background: #08f;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .3)
 }
 
 .border-section {
-    border-top: 4px solid #0088ff !important;
+    border-top: 4px solid #08f !important
 }
 
 .site-header .navbar-nav .nav-link {
     color: #fff;
-    font-weight: 100;
-    margin: 0 6px;
     font-size: 15px;
+    font-weight: 100;
     letter-spacing: 1px;
+    margin: 0 6px
 }
 
 .site-header .navbar-nav .nav-link:active,
 .site-header .navbar-nav .nav-link:hover,
 .site-header .navbar-nav .nav-link:visited {
-    color: rgba(255, 255, 255, .84);
+    color: rgba(255, 255, 255, .84)
 }
 
 .content-section {
     background: #fff;
-    padding: 20px 20px 15px 20px;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin-bottom: 20px;
+    padding: 20px 20px 15px
 }
 
 .footer {
-    padding: 3rem 0 1.5rem 0;
-    margin: 22.4rem 0 0 0;
+    margin-top: 70vh;
+    padding: 3rem 0 1.5rem
 }
 
 .footer .footer-site-logo {
-    text-align: center;
+    align-items: center;
+    display: flex;
     font-size: 1.7rem;
     font-weight: 800;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center
 }
 
-.footer .footer-site-logo a {
-    color: #0088ff;
+.footer .footer-site-logo a,
+.footer .nav-links li a:hover,
+.btncmt i {
+    color: #08f
 }
 
 .footer .nav-links li {
-    display: inline-block;
+    display: inline-block
 }
 
 .footer .nav-links li a {
-    padding: 10px;
     color: #000;
-}
-
-.footer .nav-links li a:hover {
-    color: #0088ff;
+    padding: 10px
 }
 
 .footer .copyright {
-    color: #999999;
+    color: #999
 }
 
 .compact-user-section {
     background: #fff;
-    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin-bottom: 20px;
+    padding: 15px
 }
 
 .article-title {
     color: #444;
-    font-weight: 600;
+    font-weight: 600
 }
 
 a.article-title:hover {
-    color: #0088ff;
-    text-decoration: none;
+    color: #08f;
+    text-decoration: none
 }
 
 .article-content {
-    white-space: pre-line;
+    white-space: pre-line
 }
 
 .article-img {
     height: 65px;
-    width: 65px;
     margin-right: 16px;
+    width: 65px
 }
 
 .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
     border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 4px;
+    padding-bottom: 1px
 }
 
 .article-metadata a:hover {
     color: #333;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .article-svg {
-    width: 25px;
     height: 25px;
     vertical-align: middle;
+    width: 25px
 }
 
 .account-img {
     height: 170px;
-    width: 170px;
-    padding: 5px;
     margin: 20px 20px 0;
+    padding: 5px;
     transform: translate(-20px, 0);
+    width: 170px
 }
 
-.offline-circle,
 .online-circle {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
     background-color: #07dd00;
     border: 3px solid #fff;
+    border-radius: 50%;
     bottom: 0;
-    right: 10px;
+    height: 24px;
     position: absolute;
+    right: 10px;
+    width: 24px
 }
 
 .offline-circle {
     background-color: #6e6e6e;
-}
-
-.img-cont,
-.img-cont2,
-.img-cont3 {
-    position: relative;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: 0;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    width: 24px
 }
 
 .img-cont {
     height: 170px;
-    width: 170px;
+    position: relative;
+    width: 170px
 }
 
 .img-cont2 {
     height: 55px;
-    width: 55px;
+    position: relative;
+    width: 55px
 }
 
 .img-cont3 {
     height: 78px;
-    width: 78px;
+    position: relative;
+    width: 78px
 }
 
-.offline-circle2,
-.offline-circle3,
-.offline-circle4,
-.online-circle2,
-.online-circle3,
-.online-circle4 {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+.online-circle3 {
     background-color: #07dd00;
     border: 3px solid #fff;
+    border-radius: 50%;
     bottom: -16px;
-    right: 2px;
+    height: 18px;
     position: absolute;
+    right: 2px;
+    width: 18px
 }
 
-.offline-circle2,
-.offline-circle3,
-.offline-circle4,
-.online-circle2,
-.online-circle4 {
+.offline-circle3 {
     background-color: #6e6e6e;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: -16px;
+    height: 18px;
+    position: absolute;
+    right: 2px;
+    width: 18px
 }
 
-.offline-circle2,
-.offline-circle4,
-.online-circle2,
-.online-circle4 {
+.online-circle2 {
     background-color: #07dd00;
+    border: 3px solid #fff;
+    border-radius: 50%;
     bottom: 0;
+    height: 18px;
+    position: absolute;
     right: 6px;
+    width: 18px
 }
 
-.offline-circle2,
-.offline-circle4,
-.online-circle4 {
+.offline-circle2 {
     background-color: #6e6e6e;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: 0;
+    height: 18px;
+    position: absolute;
+    right: 6px;
+    width: 18px
 }
 
-.offline-circle4,
 .online-circle4 {
     background-color: #07dd00;
+    border: 3px solid #fff;
+    border-radius: 50%;
     bottom: 10px;
+    height: 18px;
+    position: absolute;
     right: 10px;
+    width: 18px
 }
 
 .offline-circle4 {
     background-color: #6e6e6e;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: 10px;
+    height: 18px;
+    position: absolute;
+    right: 10px;
+    width: 18px
 }
 
 .account-img-container {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
+    justify-content: center
 }
 
 .account-heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem
 }
 
 #searchbar form {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    border-radius: 50px;
-    padding: 3px 15px;
     background-color: transparent;
     border: 1px solid #e4e4e4;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
     margin-right: 10px;
+    padding: 3px 15px;
+    width: auto
 }
 
 #searchbar form input::placeholder {
     color: #fff;
-    font-size: 14px;
+    font-size: 14px
 }
 
 @media only screen and (max-width:991px) {
     #searchbar form {
         border-radius: 0;
-        margin: 12px 10px 10px 0;
+        margin: 12px 10px 10px 0
     }
 }
 
 #searchbar form input,
 .search-btn {
-    color: #fff;
-    border: 0;
-    outline: 0;
     background-color: transparent;
+    border: 0;
+    color: #fff;
+    outline: 0
 }
 
 #searchbar form input {
-    font-size: 15px;
     flex: 1;
+    font-size: 15px
 }
 
 .search-btn {
-    width: 25px;
-    padding-left: 10px;
     border-left: 1px solid rgba(202, 202, 202, .83);
+    padding-left: 10px;
+    width: 25px
 }
 
 .search-btn i {
-    font-size: 16px;
+    font-size: 16px
 }
 
 .btncmt i,
 .btnhrt i {
-    font-size: 22px;
     color: #ff1414;
-}
-
-.btncmt i {
-    color: #0088ff;
+    font-size: 22px
 }
 
 .btn {
     border-radius: 0;
-    padding: 8px 15px;
     font-size: 14px;
+    padding: 8px 15px
 }
 
 .btn-warning {
     background-color: #fb0;
-    color: #000;
+    color: #000
 }
 
 .btn-danger {
     background-color: #ff1414;
-    color: #fff;
+    color: #fff
 }
 
 .btncmt,
 .btnhrt,
 .btnsave {
-    padding: 0;
+    padding: 0
 }
 
 .btnsave {
-    font-size: 24px;
     color: #ffd23c;
+    font-size: 24px
 }
 
 .btnsave:hover {
     color: #ffd23c;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .btndel,
 .btnedit {
+    color: #08f;
     font-size: 22px;
-    padding: 0;
-    color: #0088ff;
+    padding: 0
 }
 
-.btndel {
-    color: #ff1414;
+.btndel,
+.asteriskField {
+    color: #ff1414
 }
 
 .custom-txt {
-    width: 100%;
+    width: 100%
 }
 
 .chat-box,
 .messages-box {
     height: 58vh;
-    overflow-y: scroll;
+    overflow-y: scroll
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 8px
 }
 
 ::-webkit-scrollbar-track {
-    width: 5px;
     background: #f5f5f5;
+    width: 5px
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 1em;
     background-color: #d4d4d4;
+    width: 1em
 }
 
 .notify-badge {
+    background: #fff;
+    border-radius: 100%;
+    bottom: 3px;
+    box-shadow: 0 0 5px .3px;
+    color: gray;
+    font-size: 20px;
+    height: 42px;
+    padding: 5px 10px;
     position: absolute;
     right: -10px;
-    bottom: 3px;
-    background: #fff;
-    box-shadow: 0 0 5px .3px;
     text-align: center;
-    border-radius: 100%;
-    width: 42px;
-    height: 42px;
-    color: gray;
-    padding: 5px 10px;
-    font-size: 20px;
+    width: 42px
 }

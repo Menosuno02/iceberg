@@ -11,10 +11,8 @@
 			data: payload,
 			timeout: 5000,
 			success: function(data) {
-				console.log("Éxito", data)
-				if(data['response'] == "Solicitud de amistad cancelada"){
-				}
-				else if(data['response'] != null)
+				console.log("Éxito", data);
+				if (data['response'] != "Solicitud de amistad cancelada" && data['response'] != null)
 					alert(data['response']);
 			},
 			error: function(data) {

@@ -7,11 +7,9 @@
 			url: url,
 			timeout: 5000,
 			success: function(data) {
-				console.log("Éxito", data)
-				if(data['response'] == "Solicitud de amistad declinada"){
-				}
-				else if(data['response'] != null)
-					alert(data['response'])
+				console.log("Éxito", data);
+				if (data['response'] != "Solicitud de amistad declinada" && data['response'] != null)
+					alert(data['response']);
 			},
 			error: function(data) {
 				console.error("Error", data);
