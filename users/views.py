@@ -65,7 +65,7 @@ def register(request):
                 messages.success(request, f"¡Tu cuenta ha sido creada! Ya puedes iniciar sesión")
                 return redirect('login')
             else:
-                messages.error(request, 'Invalid reCAPTCHA. Please try again.')            
+                messages.error(request, 'reCAPTCHA inválido')            
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form':form})

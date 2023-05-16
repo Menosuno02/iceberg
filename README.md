@@ -5,6 +5,3 @@
     python manage.py createsuperuser
     python manage.py runserver
 ```
-
-https://devcenter.heroku.com/articles/getting-started-with-python
-https://realpython.com/django-hosting-on-heroku/
