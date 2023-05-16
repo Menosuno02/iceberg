@@ -45,7 +45,7 @@
 {% endblock content %}
 {% block script %}
   <script>
-        function copytoclip(){
+        function copytoclip() {
           navigator.clipboard.writeText("{{request.build_absolute_uri}}");
           alert("URL copiada al portapapeles");
         }

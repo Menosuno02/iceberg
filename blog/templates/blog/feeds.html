@@ -35,7 +35,7 @@
         </h3>
         <hr>
         <p class="article-content">
-          {{ post.content|safe|linebreaks|truncatewords_html:"20" }}<a href="{% url 'post-detail' post.id %}">[Leer el post entero]</a>
+          {{ post.content|safe|linebreaks|truncatewords_html:"20" }}<a href="{% url 'post-detail' post.id %}">Leer el post entero</a>
         </p>
       </article>
     {% endfor %}
@@ -106,7 +106,7 @@
             role="button"
             aria-expanded="false"
             aria-controls="collapseExample">Siguiendo a &nbsp;<i class="fas fa-angle-down"></i></a>
-        <a class="btn btn-warning" href="{% url 'profile-list-view' %}">Todos los usuarios</a>
+        <a class="btn btn-primary" href="{% url 'profile-list-view' %}">Todos los usuarios</a>
         <br>
         <div class="collapse" id="collapseExample">
           {% if profile.following.all %}

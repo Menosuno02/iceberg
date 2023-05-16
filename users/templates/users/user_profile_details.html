@@ -24,40 +24,6 @@
         </h4>
         <p class="card-text text-center text-muted">{{ object.user.email }}</p>
         <p class="card-text text-center text-muted">{{ object.user.profile.bio }}</p>
-        <ul class="rslinks list-inline text-center m-4">
-          <li class="list-inline-item m-1">
-            <a title=""
-                data-placement="top"
-                data-toggle="tooltip"
-                class="tooltips btn-primary"
-                href=""
-                data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          </li>
-          <li class="list-inline-item m-1">
-            <a title=""
-                data-placement="top"
-                data-toggle="tooltip"
-                class="tooltips btn-primary"
-                href=""
-                data-original-title="Twitter"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li class="list-inline-item m-1">
-            <a title=""
-                data-placement="top"
-                data-toggle="tooltip"
-                class="tooltips btn-danger"
-                href=""
-                data-original-title="Skype"><i class="fab fa-instagram"></i></a>
-          </li>
-          <li class="list-inline-item m-1">
-            <a title=""
-                data-placement="top"
-                data-toggle="tooltip"
-                class="tooltips btn-primary"
-                href=""
-                data-original-title="Linkedin"><i class="fab fa-linkedin"></i></a>
-          </li>
-        </ul>
         <div class="text-center">
           {% if object.user != user %}
             {% if follow %}
@@ -167,41 +133,19 @@
     </div>
     <br>
     <style type="text/css">
-      .rslinks li a {
-          border-radius: 50%;
-          color: rgba(255, 255, 255);
-          display: inline-block;
-          height: 40px;
-          line-height: 35px;
-          border: 2px solid transparent;
-          text-align: center;
-          width: 40px;
-        font-size: 14px;
-      }
-
-      .imagen-perfil{
-        max-height: 100px;
-        max-width: 100px;
+      .card {
         border-radius: 12px;
       }
 
-      .card{
-        border-radius: 12px;
-      }
-        
-      .link-perfil{
-        color: #000;
-      }
-
-      .material-icons{
+      .material-icons {
         font-size: 30px;
       }
 
-      .material-icons:hover{
+      .material-icons:hover {
         cursor: pointer;
       }
 
-      .confirmar-sol{
+      .confirmar-sol {
         color: green;
       }
 
@@ -213,7 +157,7 @@
         opacity: 0.3;
       }
 
-      .declinar-sol{
+      .declinar-sol {
         color: red;
       }
     </style>
@@ -265,54 +209,54 @@
     </div>
   </div>
   <script type="text/javascript">
-	function onFriendRequestSent(){
-		location.reload();
-	}
+    function onFriendRequestSent(){
+      location.reload();
+    }
 
-	function onFriendRequestCancelled(){
-		location.reload();
-	}
+    function onFriendRequestCancelled(){
+      location.reload();
+    }
 
-	function onFriendRemoved(){
-		location.reload();
-	}
+    function onFriendRemoved(){
+      location.reload();
+    }
 
-	function onFriendRequestAccepted(){
-		location.reload();
-	}
+    function onFriendRequestAccepted(){
+      location.reload();
+    }
 
-	function onFriendRequestDeclined(){
-		location.reload();
-	}
+    function onFriendRequestDeclined(){
+      location.reload();
+    }
 
-	var sendFriendRequestBtn = document.getElementById("id_send_friend_request_btn");
-	if (sendFriendRequestBtn != null){
-		sendFriendRequestBtn.addEventListener("click", function(){
-			sendFriendRequest("{{object.user.id}}", onFriendRequestSent);
-		})
-	}
+    var sendFriendRequestBtn = document.getElementById("id_send_friend_request_btn");
+    if (sendFriendRequestBtn != null){
+      sendFriendRequestBtn.addEventListener("click", function() {
+        sendFriendRequest("{{object.user.id}}", onFriendRequestSent);
+      })
+    }
 
-	var cancelFriendRequestBtn = document.getElementById("id_cancel_friend_request_btn");
-	if(cancelFriendRequestBtn != null){
-		cancelFriendRequestBtn.addEventListener("click", function(){
-			cancelFriendRequest("{{object.user.id}}", onFriendRequestCancelled);
-		})
-	}
+    var cancelFriendRequestBtn = document.getElementById("id_cancel_friend_request_btn");
+    if(cancelFriendRequestBtn != null){
+      cancelFriendRequestBtn.addEventListener("click", function() {
+        cancelFriendRequest("{{object.user.id}}", onFriendRequestCancelled);
+      })
+    }
 
-	var removeFriendBtn = document.getElementById("id_unfriend_btn");
-	if (removeFriendBtn != null){
-		removeFriendBtn.addEventListener("click", function(){
-			removeFriend("{{object.user.id}}", onFriendRemoved);
-		})
-	}
+    var removeFriendBtn = document.getElementById("id_unfriend_btn");
+    if (removeFriendBtn != null){
+      removeFriendBtn.addEventListener("click", function() {
+        removeFriend("{{object.user.id}}", onFriendRemoved);
+      })
+    }
 
-	function triggerAcceptFriendRequest(friend_request_id){
-		acceptFriendRequest(friend_request_id, onFriendRequestAccepted);
-	}
+    function triggerAcceptFriendRequest(friend_request_id) {
+      acceptFriendRequest(friend_request_id, onFriendRequestAccepted);
+    }
 
-	function triggerDeclineFriendRequest(friend_request_id){
-		declineFriendRequest(friend_request_id, onFriendRequestDeclined);
-	}
+    function triggerDeclineFriendRequest(friend_request_id) {
+      declineFriendRequest(friend_request_id, onFriendRequestDeclined);
+    }
   </script>
   {% include "friend/snippets/send_friend_request.html" %}
   {% include "friend/snippets/accept_friend_request.html" %}
