@@ -100,13 +100,14 @@
       </ul>
       <br>
       <div>
-        <a class="btn btn-primary"
+        <a class="btn btn-primary rounded-pill"
             data-toggle="collapse"
             href="#collapseExample"
             role="button"
             aria-expanded="false"
             aria-controls="collapseExample">Siguiendo a &nbsp;<i class="fas fa-angle-down"></i></a>
-        <a class="btn btn-primary" href="{% url 'profile-list-view' %}">Todos los usuarios</a>
+        <a class="btn btn-primary rounded-pill"
+            href="{% url 'profile-list-view' %}">Todos los usuarios</a>
         <br>
         <div class="collapse" id="collapseExample">
           {% if profile.following.all %}
