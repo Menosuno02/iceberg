@@ -38,7 +38,7 @@
         </h3>
         <hr>
         <p class="article-content">
-          {{ post.content|safe|linebreaks|truncatewords_html:"20" }}<a href="{% url 'post-detail' post.id %}">[Leer todo el post]</a>
+          {{ post.content|safe|linebreaks|truncatewords_html:"20" }}<a href="{% url 'post-detail' post.id %}">Leer todo el post</a>
         </p>
       </article>
     {% endfor %}
