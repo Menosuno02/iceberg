@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Iniciar sesión
+{% endblock title %}
+{% block content %}
+  <div class="container">
+    <h2>Iniciar sesión con {{ provider.name }}</h2>
+    <div class="border-top pt-3">
+      <small class="text-muted">Vas a iniciar sesión con una cuenta externa de {{ provider.name }}</small>
+      <form class="pt-3" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary px-4 py-2 font-weight-bold rounded-pill"
+                type="submit">Continuar</button>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
