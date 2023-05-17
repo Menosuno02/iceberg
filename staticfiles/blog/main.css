@@ -39,12 +39,6 @@ a:hover {
   text-decoration: none !important
 }
 
-@media only screen and (max-width: 991.98px) { 
-  div.col-lg-6.d-none.d-sm-block {
-    margin-top: 3rem;
-  }
-}
-
 .bg-nav {
   background: #08f;
   box-shadow: 0 0 16px rgba(0, 0, 0, .3)
@@ -295,10 +289,14 @@ a.article-title:hover {
   font-size: 14px
 }
 
-@media only screen and (max-width:991px) {
+@media only screen and (max-width:991.99px) {
   #searchbar form {
     border-radius: 0;
     margin: 12px 10px 10px 0
+  }
+
+  div.col-lg-6.d-none.d-sm-block {
+    margin-top: 3rem;
   }
 }
 
@@ -354,28 +352,32 @@ a.article-title:hover {
 }
 
 .btnsave {
-  color: #08f;
   font-size: 24px
 }
 
-
-.btnsave:hover,
-.btnedit:hover {
-  color: #08f;
-  cursor: pointer
+.btnsave,
+.btnedit {
+  color: #08f
 }
 
 .btndel,
 .btnedit {
-  color: #08f;
   font-size: 22px;
   padding: 0
 }
 
+.btnsave:hover,
+.btnedit:hover {
+  color: #0065bf
+}
+
 .btndel,
-.btldel:hover,
 .asteriskField {
   color: #ff1414
+}
+
+.btndel:hover {
+  color: #ce0000
 }
 
 .custom-txt {
