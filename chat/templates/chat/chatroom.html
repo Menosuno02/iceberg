@@ -81,14 +81,14 @@
   {{ room_name|json_script:"room-name" }}
   {{ request.user.profile.image.url|json_script:"user_image" }}
   <script>
-        $(document).ready(function(event){
-            $("#chat-box").scrollTop($("#chat-box").scrollHeight);
+        $(document).ready(function(event) {
+          $("#chat-box").scrollTop($("#chat-box").prop("scrollHeight"));
         });
         document.querySelector('#input').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                document.querySelector('#submit').click();
-            }
+          if (e.key === 'Enter') {
+              e.preventDefault();
+              document.querySelector('#submit').click();
+          }
         });
         let my_name = '{{ my_name }}';
         const user_username = JSON.parse(document.getElementById('user_username').textContent);
@@ -97,93 +97,93 @@
             const messageInputDom = document.querySelector('#input');
             const message = messageInputDom.value;
             if (message.trim().length!=0) {
-                chatSocket.send(JSON.stringify({
-                    'message': message,
-                    'username': user_username,
-                    'user_image': user_image,
-                }));
-                messageInputDom.value = '';
-                messageInputDom.focus();
+              chatSocket.send(JSON.stringify({
+                  'message': message,
+                  'username': user_username,
+                  'user_image': user_image,
+              }));
+              messageInputDom.value = '';
+              messageInputDom.focus();
             }
             else {
-                alert("Mensaje no puede estar vacío");
-                messageInputDom.focus();
+              alert("Mensaje no puede estar vacío");
+              messageInputDom.focus();
             }
         };
 
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         const ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
         const chatSocket = new WebSocket(
-            ws_scheme + '://' +
-            window.location.host +
-            '/ws/chat/' +
-            roomName +
-            '/'
+          ws_scheme + '://' +
+          window.location.host +
+          '/ws/chat/' +
+          roomName +
+          '/'
         );
         chatSocket.onmessage = function (e) {
-            const data = JSON.parse(e.data);
-            console.log(data);
-            if (data.username != my_name) add_sender_chat(data);
-            else add_receiver_chat(data);
+          const data = JSON.parse(e.data);
+          console.log(data);
+          if (data.username != my_name) add_sender_chat(data);
+          else add_receiver_chat(data);
         }
 
         function add_sender_chat(data) {
-            var chat_window = document.querySelector('.chat-text-add');
-            var message = document.createElement('div');
-            message.classList.add('media', 'w-75', 'mb-3');
-            chat_window.appendChild(message);
+          var chat_window = document.querySelector('.chat-text-add');
+          var message = document.createElement('div');
+          message.classList.add('media', 'w-75', 'mb-3');
+          chat_window.appendChild(message);
 
-            var image = document.createElement('img');
-            image.src = String(data.user_image);
-            image.classList.add('rounded-circle');
-            image.width = 40;
-            image.height = 40;
-            image.alt = data.username;
-            message.appendChild(image);
+          var image = document.createElement('img');
+          image.src = String(data.user_image);
+          image.classList.add('rounded-circle');
+          image.width = 40;
+          image.height = 40;
+          image.alt = data.username;
+          message.appendChild(image);
 
-            var text_div = document.createElement('div');
-            text_div.classList.add('media-body', 'ml-3');
-            message.appendChild(text_div);
+          var text_div = document.createElement('div');
+          text_div.classList.add('media-body', 'ml-3');
+          message.appendChild(text_div);
 
-            var text_div_div = document.createElement('div');
-            text_div_div.classList.add('bg-light', 'rounded', 'py-2', 'px-3', 'mb-2');
-            text_div.appendChild(text_div_div);
+          var text_div_div = document.createElement('div');
+          text_div_div.classList.add('bg-light', 'rounded', 'py-2', 'px-3', 'mb-2');
+          text_div.appendChild(text_div_div);
 
-            var text_div_div_p = document.createElement('p');
-            text_div_div_p.classList.add('text-small', 'mb-0', 'text-muted');
-            text_div_div_p.innerHTML = data.message;
-            text_div_div.appendChild(text_div_div_p);
+          var text_div_div_p = document.createElement('p');
+          text_div_div_p.classList.add('text-small', 'mb-0', 'text-muted');
+          text_div_div_p.innerHTML = data.message;
+          text_div_div.appendChild(text_div_div_p);
 
-            text_div_date = document.createElement('p');
-            text_div_date.classList.add('small', 'text-muted');
-            text_div_date.innerHTML = new Date().toLocaleString();
-            text_div.appendChild(text_div_date);
+          text_div_date = document.createElement('p');
+          text_div_date.classList.add('small', 'text-muted');
+          text_div_date.innerHTML = new Date().toLocaleString();
+          text_div.appendChild(text_div_date);
         }
 
         function add_receiver_chat(data){
-            var chat_window = document.querySelector('.chat-text-add');
+          var chat_window = document.querySelector('.chat-text-add');
 
-            var message = document.createElement('div');
-            message.classList.add('media', 'w-75', 'ml-auto', 'mb-3');
-            chat_window.appendChild(message);
+          var message = document.createElement('div');
+          message.classList.add('media', 'w-75', 'ml-auto', 'mb-3');
+          chat_window.appendChild(message);
 
-            var text_div = document.createElement('div');
-            text_div.classList.add('media-body');
-            message.appendChild(text_div);
+          var text_div = document.createElement('div');
+          text_div.classList.add('media-body');
+          message.appendChild(text_div);
 
-            var text_div_div = document.createElement('div');
-            text_div_div.classList.add('bg-primary', 'rounded', 'py-2', 'px-3', 'mb-2');
-            text_div.appendChild(text_div_div);
+          var text_div_div = document.createElement('div');
+          text_div_div.classList.add('bg-primary', 'rounded', 'py-2', 'px-3', 'mb-2');
+          text_div.appendChild(text_div_div);
 
-            var text_div_div_p = document.createElement('p');
-            text_div_div_p.classList.add('text-small', 'mb-0', 'text-white');
-            text_div_div_p.innerHTML = data.message;
-            text_div_div.appendChild(text_div_div_p);
+          var text_div_div_p = document.createElement('p');
+          text_div_div_p.classList.add('text-small', 'mb-0', 'text-white');
+          text_div_div_p.innerHTML = data.message;
+          text_div_div.appendChild(text_div_div_p);
 
-            text_div_date = document.createElement('p');
-            text_div_date.classList.add('small', 'text-muted');
-            text_div_date.innerHTML = new Date().toLocaleString();
-            text_div.appendChild(text_div_date);
+          text_div_date = document.createElement('p');
+          text_div_date.classList.add('small', 'text-muted');
+          text_div_date.innerHTML = new Date().toLocaleString();
+          text_div.appendChild(text_div_date);
         }
   </script>
 {% endblock script %}
