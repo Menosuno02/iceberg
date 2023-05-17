@@ -3,14 +3,14 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-9 text-center">
-        <div class="footer-site-logo mb-4">
+        <a href="{% url 'firsthome' %}" class="footer-site-logo mb-4">
           <img src="{% static 'blog/images/iceberg_logo_blue.png' %}"
                 alt="Logo"
                 width="30"
                 height="30"
                 class="d-inline-block align-text-top mr-2">
-          <a href="#">Iceberg</a>
-        </div>
+          Iceberg
+        </a>
         <ul class="list-unstyled nav-links mb-3">
           <li>
             <a href="{% url 'blog-about' %}">Sobre Iceberg</a>
