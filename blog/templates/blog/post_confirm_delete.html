@@ -11,8 +11,8 @@
         <h3>¿Seguro que quieres borrar tu post "{{ object.title }}"?</h3>
       </fieldset>
       <div class="form-group">
-        <button class="btn btn-outline-danger" type="submit">Sí</button>
-        <a class="btn btn-outline-secondary"
+        <button class="btn btn-danger rounded-pill" type="submit">Sí</button>
+        <a class="btn btn-secondary rounded-pill"
             href="{% url 'post-detail' object.id %}">Cancelar</a>
       </div>
     </form>

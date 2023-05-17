@@ -91,7 +91,7 @@ a:hover {
 }
 
 .footer .footer-site-logo a,
-.footer .footer-site-logo a:hover,
+.footer .footer-site-logo:hover,
 .footer .nav-links li a:hover,
 .btncmt i {
   color: #08f
@@ -354,12 +354,14 @@ a.article-title:hover {
 }
 
 .btnsave {
-  color: #ffd23c;
+  color: #08f;
   font-size: 24px
 }
 
-.btnsave:hover {
-  color: #ffd23c;
+
+.btnsave:hover,
+.btnedit:hover {
+  color: #08f;
   cursor: pointer
 }
 
@@ -371,6 +373,7 @@ a.article-title:hover {
 }
 
 .btndel,
+.btldel:hover,
 .asteriskField {
   color: #ff1414
 }
