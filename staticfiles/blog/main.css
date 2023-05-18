@@ -40,7 +40,10 @@ a:hover {
 }
 
 .first-gradient {
-  background: linear-gradient(to right, #007fff, #08f);
+  background: linear-gradient(to right, #08f, #005fb2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
 }
 
 .bg-nav {
