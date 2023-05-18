@@ -39,6 +39,10 @@ a:hover {
   text-decoration: none !important
 }
 
+.first-gradient {
+  background: linear-gradient(to right, #007fff, #08f);
+}
+
 .bg-nav {
   background: #08f;
   box-shadow: 0 0 16px rgba(0, 0, 0, .3)
