@@ -39,7 +39,7 @@ a:hover {
   text-decoration: none !important
 }
 
-div.form-group:has(div#div_id_remember.form-check) {
+div.form-group:has(> div#div_id_remember) {
   display: none
 }
 
