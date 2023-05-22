@@ -113,7 +113,7 @@ def remove_friend(request, *args, **kwargs):
                 removee = User.objects.get(pk=user_id)
                 friend_list = FriendList.objects.get(user=user)
                 friend_list.unfriend(removee)
-                payload['response'] = "Amigo quitado"
+                payload['response'] = "Amigo eliminado"
             except Exception as e:
                 payload['response'] = f"Algo fue mal: {str(e)}"
         else:
