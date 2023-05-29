@@ -38,7 +38,7 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
-    """ Recibir comentario """
+    """ Recibir mensaje """
     async def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']

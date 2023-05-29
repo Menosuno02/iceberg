@@ -315,8 +315,9 @@ a.article-title:hover {
   outline: 0
 }
 
-input:-internal-autofill-selected {
+#searchbar form input:-internal-autofill-selected {
   -webkit-text-fill-color: #fff !important;
+  box-shadow: 0 0 0 30px #08f inset !important;
   -webkit-box-shadow: 0 0 0 30px #08f inset !important
 }
 
