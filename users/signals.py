@@ -17,6 +17,7 @@ def create_profile(sender, instance, created, **kwargs):
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
+""" Guardado de relación de amistad """
 @receiver(post_save, sender=Relationship)
 def post_save_add_to_friends(sender, created, instance, **kwargs):
     sender_ = instance.sender
