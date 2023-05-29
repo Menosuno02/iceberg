@@ -9,7 +9,7 @@
       <form action="" method="post">
         {% csrf_token %}
         <fieldset class="form-group">
-          <legend class="border-bottom mb-4">Nuevo post</legend>
+          <legend class="border-bottom mb-4">Edición de post</legend>
           {{ form.media }}
           {{ form|crispy }}
         </fieldset>

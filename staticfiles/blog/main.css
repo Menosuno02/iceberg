@@ -315,6 +315,11 @@ a.article-title:hover {
   outline: 0
 }
 
+input:-internal-autofill-selected {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 30px #08f inset !important
+}
+
 #searchbar form input {
   flex: 1;
   font-size: 15px
