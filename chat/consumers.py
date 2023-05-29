@@ -55,7 +55,7 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             }
         )
 
-    """ Mensajes del chat """
+    """ Mensaje del chat """
     async def chatroom_message(self, event):
         message = event['message']
         username = event['username']
