@@ -17,7 +17,7 @@ from users.models import Profile
 from .forms import CommentForm
 from .models import Comment, Post
 
-""" Página inicio con posts """
+""" Página bienvenida """
 def first(request):
     return render(request, 'blog/first.html', {'posts':Post.objects.all()})
 
