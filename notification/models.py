@@ -5,7 +5,7 @@ from django.db import models
 
 """ Notificación """
 class Notification(models.Model):
-    NOTIFICATION_TYPES = ((1,'Me gusta'),(2,'Seguido'),(3,'Comentario'),(4,'Respuesta'),(5,'Me gusta-Comentario'),(6,'Me gusta-Respuesta'))
+    NOTIFICATION_TYPES = ((1,'Me gusta'),(2,'Seguido'),(3,'Comentario'),(4,'Respuesta'))
 
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='notify_post', blank=True, null=True)
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notify_from_user')

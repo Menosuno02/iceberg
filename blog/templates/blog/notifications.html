@@ -32,14 +32,6 @@
             <p class="card-text">
               <i class="fas fa-reply"></i>&nbsp;&nbsp;Respondió "{{ notification.text_preview }}" a un comentario de tu post "<a href="{% url 'post-detail' notification.post.id %}">{{ notification.post }}</a>"
             </p>
-          {% elif notification.notification_type == 5 %}
-            <p class="card-text">
-              <i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;Le gustó un comentario de tu post "<a href="{% url 'post-detail' notification.post.id %}">{{ notification.post }}</a>"
-            </p>
-          {% elif notification.notification_type == 6 %}
-            <p class="card-text">
-              <i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;Le gustó una respuesta de tu post "<a href="{% url 'post-detail' notification.post.id %}">{{ notification.post }}</a>"
-            </p>
           {% endif %}
         </div>
       </div>
