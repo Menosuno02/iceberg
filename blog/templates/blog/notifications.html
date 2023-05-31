@@ -16,7 +16,7 @@
           <span class="text-muted float-right small">{{ notification.date|naturaltime }}</span>
           <br>
           <br>
-          {% if notification.notification_type == 1 %}
+          {% if notification.notification_type == 1 or notification.notification_type == 5 or notification.notification_type == 6 %}
             <p class="card-text">
               <i class="far fa-thumbs-up"></i>&nbsp;&nbsp;Le gustó tu post "<a href="{% url 'post-detail' notification.post.id %}">{{ notification.post }}</a>"
             </p>
