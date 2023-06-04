@@ -145,8 +145,10 @@ class PostListView(ListView):
         context = super(PostListView, self).get_context_data()
         cu = Profile.objects.get(pk=self.request.user.pk)
         users = list(Profile.objects.filter(interests__in=cu.interests.all()).exclude(pk=self.request.user.pk).distinct())
-        # TENIENDO EN CUENTA SEXO
+        # Teniendo en cuenta sexo
         # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(sex=cu.sex)).exclude(pk=self.request.user.pk).distinct())
+        # Teniendo en cuenta orientación
+        # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(orientation=cu.orientation)).exclude(pk=self.request.user.pk).distinct())
         if len(users) > 3:
             cnt = 3
         else:

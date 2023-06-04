@@ -90,11 +90,15 @@
       <h4>A quién seguir</h4>
       <br>
       <ul class="list-group">
-        {% for user in random_users %}
-          <a href="{% url 'profile-detail-view' user.pk %}">
-            <li class="list-group-item list-group-item-light">{{ user.user }}</li>
-          </a>
-        {% endfor %}
+        {% if random_users %}
+          {% for user in random_users %}
+            <a href="{% url 'profile-detail-view' user.pk %}">
+              <li class="list-group-item list-group-item-light">{{ user.user }}</li>
+            </a>
+          {% endfor %}
+        {% else %}
+          <li class="list-group-item list-group-item-light">Ninguna persona coincide con tus intereses</li>
+        {% endif %}
       </ul>
       <br>
     </div>
