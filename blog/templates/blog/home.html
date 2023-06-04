@@ -92,7 +92,7 @@
       <ul class="list-group">
         {% for user in random_users %}
           <a href="{% url 'profile-detail-view' user.pk %}">
-            <li class="list-group-item list-group-item-light">{{ user.username }}</li>
+            <li class="list-group-item list-group-item-light">{{ user.user }}</li>
           </a>
         {% endfor %}
       </ul>

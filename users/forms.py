@@ -26,10 +26,16 @@ class ProfileUpdateForm(forms.ModelForm):
     image = forms.ImageField(label=('Imagen'), error_messages = {'invalid':("Solo imágenes")}, widget=forms.FileInput, required=False)
     class Meta:
         model = Profile
-        fields = ['bio','date_of_birth','image',]
+        fields = ['bio','date_of_birth','sex','orientation','interests','image',]
         labels = {
             'bio': 'Biografía',
             'date_of_birth': 'Fecha de nacimiento',
+            'sex': 'Sexo',
+            'orientation': 'Orientación sexual',
+            'interests': 'Intereses',
+        }
+        widgets = {
+            'date_of_birth': forms.DateInput(format=('%Y-%m-%d'),attrs={'type': 'date'})
         }
 
     """ Nueva imagen de usu """

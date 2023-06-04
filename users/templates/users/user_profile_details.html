@@ -23,7 +23,29 @@
           {{ object.user.first_name }} {{ object.user.last_name }} [{{ object.user.username }}]
         </h4>
         <p class="card-text text-center text-muted">{{ object.user.email }}</p>
-        <p class="card-text text-center text-muted">{{ object.user.profile.bio }}</p>
+        {% if object.user.profile.bio %}
+          <p class="card-text text-center text-muted">{{ object.user.profile.bio }}</p>
+        {% endif %}
+        {% if object.user.profile.date_of_birth %}
+          <p class="card-text text-center text-muted">
+            <i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;{{ object.user.profile.date_of_birth }}
+          </p>
+        {% endif %}
+        {% if object.user.profile.sex and not object.user.profile.orientation %}
+          <p class="card-text text-center text-muted">
+            <i class="fas fa-heart"></i>&nbsp;&nbsp;{{ object.user.profile.sex }}
+          </p>
+        {% endif %}
+        {% if not object.user.profile.sex and object.user.profile.orientation %}
+          <p class="card-text text-center text-muted">
+            <i class="fas fa-heart"></i>&nbsp;&nbsp;{{ object.user.profile.orientation }}
+          </p>
+        {% endif %}
+        {% if object.user.profile.sex and object.user.profile.orientation %}
+          <p class="card-text text-center text-muted">
+            <i class="fas fa-heart"></i>&nbsp;&nbsp;{{ object.user.profile.sex }}, {{ object.user.profile.orientation }}
+          </p>
+        {% endif %}
         <div class="text-center">
           {% if object.user != user %}
             {% if follow %}

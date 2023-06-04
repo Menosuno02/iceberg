@@ -395,6 +395,10 @@ a.article-title:hover {
   color: #ff1414
 }
 
+.asteriskField {
+  margin-left: 0.25rem
+}
+
 .btndel:hover {
   color: #ce0000
 }

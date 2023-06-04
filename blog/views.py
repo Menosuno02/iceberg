@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.template.loader import render_to_string
@@ -132,7 +133,7 @@ def LikeCommentView(request):
         return JsonResponse({'form':html})
 
 
-""" Página de inicio con los posts """
+""" Página de inicio con los posts y usuarios """
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html' 
@@ -142,7 +143,10 @@ class PostListView(ListView):
 
     def get_context_data(self, *args,**kwargs):
         context = super(PostListView, self).get_context_data()
-        users = list(User.objects.exclude(pk=self.request.user.pk))
+        cu = Profile.objects.get(pk=self.request.user.pk)
+        users = list(Profile.objects.filter(interests__in=cu.interests.all()).exclude(pk=self.request.user.pk).distinct())
+        # TENIENDO EN CUENTA SEXO
+        # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(sex=cu.sex)).exclude(pk=self.request.user.pk).distinct())
         if len(users) > 3:
             cnt = 3
         else:
@@ -152,7 +156,7 @@ class PostListView(ListView):
         return context
 
 
-""" Todos los posts del usuario """
+""" Posts del usuario """
 class UserPostListView(ListView):
     model = Post
     template_name = 'blog/user_posts.html' 
