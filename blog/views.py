@@ -1,4 +1,5 @@
 import random
+from datetime import timedelta
 from itertools import chain
 
 from django.contrib.auth.decorators import login_required
@@ -149,6 +150,11 @@ class PostListView(ListView):
         # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(sex=cu.sex)).exclude(pk=self.request.user.pk).distinct())
         # Teniendo en cuenta orientación
         # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(orientation=cu.orientation)).exclude(pk=self.request.user.pk).distinct())
+        # Teniendo en cuenta fecha de nacimiento
+        # if (cu.date_of_birth):
+        #     start_date = cu.date_of_birth - timedelta(days=365*5)
+        #     end_date = cu.date_of_birth + timedelta(days=365*5)
+        #     users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(date_of_birth__range=(start_date, end_date))).exclude(pk=self.request.user.pk).distinct())
         if len(users) > 3:
             cnt = 3
         else:
