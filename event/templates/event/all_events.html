@@ -10,10 +10,26 @@
         <small class="text-muted">{{ event.date|date:"l j/n/Y, H:i" }}</small>
         <hr>
         <p class="article-content">{{ event.description|safe|linebreaks }}</p>
+        {% if event.registered_users.all %}
+          <div>
+            {% for user in event.registered_users.all|slice:":50" %}
+              <img class="rounded-circle mr-2"
+                   src="{{ user.profile.image.url }}"
+                   width="40"
+                   height="40"
+                   alt="{{ user.username }}"
+                   title="{{ user.username }}">
+            {% endfor %}
+          </div>
+          <br>
+        {% endif %}
         {% if user in event.registered_users.all %}
-          <button class="btn btn-outline-secondary" disabled>Ya estás apuntado a este evento</button>
+          <form action="{% url 'unregister-from-event' event.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-outline-secondary" type="submit">Desapuntarse de este evento</button>
+          </form>
         {% else %}
-          <form action="{% url 'register_to_event' event.id %}" method="post">
+          <form action="{% url 'register-to-event' event.id %}" method="post">
             {% csrf_token %}
             <button class="btn btn-primary" type="submit">Apúntate a este evento</button>
           </form>
