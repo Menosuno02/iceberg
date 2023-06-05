@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% block title %}
+  Eventos
+{% endblock title %}
+{% block content %}
+  <div class="col-md-12">
+    {% for event in events %}
+      <div class="content-section" style="overflow: auto;">
+        <h3 class="article-title">{{ event.title }}</h3>
+        <small class="text-muted">{{ event.date|date:"l j/n/Y, H:i" }}</small>
+        <hr>
+        <p class="article-content">{{ event.description|safe|linebreaks }}</p>
+        {% if user in event.registered_users.all %}
+          <button class="btn btn-outline-primary" disabled>Ya estás apuntado a este evento</button>
+        {% else %}
+          <form action="{% url 'register_to_event' event.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Apúntate a este evento</button>
+          </form>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
