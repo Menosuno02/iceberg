@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'chat',
     'channels',
     'friend',
-    'event'
+    'event',
+    'django_extensions',
 ]
 
 SECRET_KEY = os.getenv("KEY")

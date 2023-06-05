@@ -162,8 +162,8 @@ class PostListView(ListView):
         #     start_date = cu.date_of_birth - timedelta(days=365*5)
         #     end_date = cu.date_of_birth + timedelta(days=365*5)
         #     users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(date_of_birth__range=(start_date, end_date))).exclude(pk=self.request.user.pk).distinct())
-        if len(users) > 3:
-            cnt = 3
+        if len(users) > 5:
+            cnt = 5
         else:
             cnt = len(users)
         random_users = random.sample(users, cnt)
