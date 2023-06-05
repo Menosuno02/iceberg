@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
+""" Evento """
 class Event(models.Model):
     title = models.CharField(max_length=600)
     description = models.TextField(max_length=300)

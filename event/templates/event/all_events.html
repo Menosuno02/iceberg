@@ -11,7 +11,7 @@
         <hr>
         <p class="article-content">{{ event.description|safe|linebreaks }}</p>
         {% if user in event.registered_users.all %}
-          <button class="btn btn-outline-primary" disabled>Ya estás apuntado a este evento</button>
+          <button class="btn btn-outline-secondary" disabled>Ya estás apuntado a este evento</button>
         {% else %}
           <form action="{% url 'register_to_event' event.id %}" method="post">
             {% csrf_token %}

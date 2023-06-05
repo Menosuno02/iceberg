@@ -8,25 +8,33 @@ from .models import Profile
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
+
     class Meta:
         model = User
-        fields = ['first_name','last_name','username','email','password1','password2']
+        fields = ['first_name', 'last_name', 'username',
+                 'email', 'password1', 'password2']
+
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
+
     class Meta:
         model = User
-        fields = ['first_name','last_name','username','email']
+        fields = ['first_name', 'last_name', 'username', 'email']
+
 
 class ProfileUpdateForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput(), required=False)
     y = forms.FloatField(widget=forms.HiddenInput(), required=False)
     width = forms.FloatField(widget=forms.HiddenInput(), required=False)
     height = forms.FloatField(widget=forms.HiddenInput(), required=False)
-    image = forms.ImageField(label=('Imagen'), error_messages = {'invalid':("Solo imágenes")}, widget=forms.FileInput, required=False)
+    image = forms.ImageField(label=('Imagen'), error_messages={'invalid': (
+        "Solo imágenes")}, widget=forms.FileInput, required=False)
+
     class Meta:
         model = Profile
-        fields = ['bio','date_of_birth','sex','orientation','interests','image',]
+        fields = ['bio', 'date_of_birth', 'sex',
+                    'orientation', 'interests', 'image',]
         labels = {
             'bio': 'Biografía',
             'date_of_birth': 'Fecha de nacimiento',
@@ -35,11 +43,11 @@ class ProfileUpdateForm(forms.ModelForm):
             'interests': 'Intereses',
         }
         widgets = {
-            'date_of_birth': forms.DateInput(format=('%Y-%m-%d'),attrs={'type': 'date'})
+            'date_of_birth': forms.DateInput(format=('%Y-%m-%d'), attrs={'type': 'date'})
         }
 
     """ Nueva imagen de usu """
-    def save(self,*args,**kwargs):
+    def save(self, *args, **kwargs):
         img = super(ProfileUpdateForm, self).save(*args, **kwargs)
         x = self.cleaned_data.get('x')
         y = self.cleaned_data.get('y')

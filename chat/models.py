@@ -1,5 +1,3 @@
-import uuid
-
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -8,8 +6,10 @@ from django.db import models
 """ Sala/chat """
 class Room(models.Model):
     room_id = models.AutoField(primary_key=True)
-    author = models.ForeignKey(User, related_name='author_room', on_delete=models.CASCADE)
-    friend = models.ForeignKey(User, related_name='friend_room', on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        User, related_name='author_room', on_delete=models.CASCADE)
+    friend = models.ForeignKey(
+        User, related_name='friend_room', on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -18,12 +18,15 @@ class Room(models.Model):
 
 """ Mensaje de chat """
 class Chat(models.Model):
-    room_id = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='chats')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author_msg')
-    friend = models.ForeignKey(User, on_delete=models.CASCADE, related_name='friend_msg')
+    room_id = models.ForeignKey(
+        Room, on_delete=models.CASCADE, related_name='chats')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='author_msg')
+    friend = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='friend_msg')
     text = models.CharField(max_length=300)
     date = models.DateTimeField(auto_now_add=True)
     has_seen = models.BooleanField(default=False)
 
     def __str__(self):
-        return '%s - %s' %(self.id, self.date)
+        return '%s - %s' % (self.id, self.date)

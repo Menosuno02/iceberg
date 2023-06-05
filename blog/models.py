@@ -24,23 +24,26 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={"pk":self.pk})
+        return reverse('post-detail', kwargs={"pk": self.pk})
 
 
 """ Comentario """
 class Comment(models.Model):
-    post = models.ForeignKey(Post, related_name="comments" , on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post, related_name="comments", on_delete=models.CASCADE)
     name = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField(max_length=200)
     date_added = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name="blogcomment", blank=True)
-    reply = models.ForeignKey('self', null=True, related_name="replies", on_delete=models.CASCADE)
+    likes = models.ManyToManyField(
+        User, related_name="blogcomment", blank=True)
+    reply = models.ForeignKey(
+        'self', null=True, related_name="replies", on_delete=models.CASCADE)
 
     def total_clikes(self):
         return self.likes.count()
 
     def __str__(self):
-        return '%s - %s - %s' %(self.post.title, self.name, self.id)
+        return '%s - %s - %s' % (self.post.title, self.name, self.id)
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={"pk":self.pk})
+        return reverse('post-detail', kwargs={"pk": self.pk})

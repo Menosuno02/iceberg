@@ -8,4 +8,4 @@ from notification.models import Notification
 def ShowNotifications(request):
     user = request.user
     notifications = Notification.objects.filter(user=user).order_by('-date')
-    return render(request, 'blog/notifications.html', {'notifications':notifications,})
+    return render(request, 'blog/notifications.html', {'notifications': notifications, })

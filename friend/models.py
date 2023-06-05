@@ -1,13 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.fields.related import ForeignKey
-from django.utils import timezone
 
 """ Lista de amigos """
 class FriendList(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user')
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name='user')
     friends = models.ManyToManyField(User, blank=True, related_name='friends')
-    
+
     def __str__(self):
         return self.user.username
 
@@ -36,8 +35,10 @@ class FriendList(models.Model):
 
 """ Solicitud de amistad """
 class FriendRequest(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='receiver')
+    sender = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='sender')
+    receiver = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='receiver')
     is_active = models.BooleanField(blank=True, null=True, default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
