@@ -12,7 +12,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username',
-                 'email', 'password1', 'password2']
+                  'email', 'password1', 'password2']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -38,7 +38,7 @@ class ProfileUpdateForm(forms.ModelForm):
         labels = {
             'bio': 'Biografía',
             'date_of_birth': 'Fecha de nacimiento',
-            'sex': 'Sexo',
+            'sex': 'Género',
             'orientation': 'Orientación sexual',
             'interests': 'Intereses',
         }
