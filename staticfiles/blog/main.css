@@ -441,3 +441,7 @@ a.article-title:hover {
   text-align: center;
   width: 42px
 }
+
+.avatar-group {
+  margin-right: -1.25rem
+}

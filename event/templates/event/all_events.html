@@ -13,7 +13,7 @@
         {% if event.registered_users.all %}
           <div>
             {% for user in event.registered_users.all|slice:":50" %}
-              <img class="rounded-circle mr-2"
+              <img class="rounded-circle avatar-group"
                    src="{{ user.profile.image.url }}"
                    width="40"
                    height="40"
