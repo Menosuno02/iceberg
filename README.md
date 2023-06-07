@@ -1,12 +1,10 @@
-# Iceberg
-
 ![](https://lh3.googleusercontent.com/pw/AJFCJaXVY5P3gOEv78os-qDl4xw4bfMHbL_xq39Ubsb5WzOc2rfrU7XlQ-wf-mjFD-X7ZJYUCnGcZbA3DSnRpByIJ5NjB6zdbRl1-o1Zd7NwTcd0NxFztrDMM442jRN9niT2N-iIfvZ9XddQff84F8wUtRY=w1920-h889-s-no?authuser=0)
 
 **Iceberg**, o **Iceberg Social**, es el proyecto parte de mi Trabajo de Final de Grado del grado superior de Desarrollo de Aplicaciones Web. Es una red social cuya finalidad es ser accesible y sencilla en uso para cualquier usuario y, a su vez, ofrecer las características que otra cualquier red social ofrece.
 
 ![](https://lh3.googleusercontent.com/pw/AJFCJaUL2DD17gJFNVCQ_xDg6sPFI7QNxSUb1p-5DV7ixHNNd4_8uhmuzra8_paaiz7aXQQQzGHydasqQa0rHGiv6421HJv2bAt5s2ymIsZ77O5hlsYwLJKiWjveRwjujG_K0Sqw_arDnFXn4ziOO5nM-3c=w1420-h782-s-no?authuser=0)
 
-### Tecnologías
+## Tecnologías
 Entre las tecnologías destacadas utilizadas para desarrollar Iceberg, se encuentran:
  - Python, Django y librerías (como channels, daphne o django-ckeditor)
  - HTML5, CSS3, Bootstrap4
@@ -15,7 +13,7 @@ Entre las tecnologías destacadas utilizadas para desarrollar Iceberg, se encuen
  - Heroku, Git, Github
  - Otras tecnologías como WebSockets o ASGI
 
-### Funcionalidades
+## Funcionalidades
  - Creación y autenticación de usuarios. Tanto cuentas locales de Iceberg como externas (mediante Google o Github)
 
 ![](https://lh3.googleusercontent.com/pw/AJFCJaX1wyWJvNxdMCjXkytqX0JTSlu3QzPhaEJphRUFKaRSM_k1otUi_zy00PQ0639HeEfHBUkz80gF71FVwqI_qdLR_4kFf-r_JeCSx3rIuIXB0WVD4cdBevdmVeH5s9Iaeh-ZQxhi_kqkKRb2hJ_JhoE=w1403-h861-s-no?authuser=0)
