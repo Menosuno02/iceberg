@@ -1,5 +1,6 @@
 import json
 
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -24,7 +25,8 @@ def friends_list_view(request, *args, **kwargs):
                 return HttpResponse(f"No se pudo encontrar la lista de amigos de {this_user.username}")
             if user != this_user:
                 if not user in friend_list.friends.all():
-                    return HttpResponse("Debéis ser amigos para ver su lista de amigos")
+                    messages.error(request, "Debes ser amigo con este usuario para ver su lista de amigos")
+                    return redirect(request.META.get('HTTP_REFERER', '/'))
             friends = []
             auth_user_friend_list = FriendList.objects.get(user=user)
             for friend in friend_list.friends.all():
