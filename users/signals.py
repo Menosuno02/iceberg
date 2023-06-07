@@ -6,20 +6,20 @@ from friend.models import FriendList
 
 from .models import Profile, Relationship
 
-""" Crea perfil cuando usuario crea cuenta """
+""" Crear perfil cuando se crea usuario """
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
 
-""" Guarda perfil cuando usuario actualiza su perfil """
+""" Actualizar perfil al actualizar usuario """
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 
-""" Guardado de relación de amistad """
+""" Guardado de relación de amistad en listas de amigos """
 @receiver(post_save, sender=Relationship)
 def post_save_add_to_friends(sender, created, instance, **kwargs):
     sender_ = instance.sender
@@ -31,7 +31,7 @@ def post_save_add_to_friends(sender, created, instance, **kwargs):
         receiver_.save()
 
 
-""" Crear lista de amigos cuando usuario crea cuenta """
+""" Crear lista de amigos cuando se crea usuario """
 @receiver(post_save, sender=User)
 def create_friendlist(sender, instance, created, **kwargs):
     if created:
