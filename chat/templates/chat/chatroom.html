@@ -37,7 +37,7 @@
                   <div class="bg-light rounded py-2 px-3 mb-2">
                     <p class="text-small mb-0 text-muted">{{ chat.text }}</p>
                   </div>
-                  <p class="small text-muted">{{ chat.date }}</p>
+                  <p class="small text-muted">{{ chat.date|date:"j/n/Y, H:i:s" }}</p>
                 </div>
               </div>
             {% else %}
@@ -46,7 +46,7 @@
                   <div class="bg-primary rounded py-2 px-3 mb-2">
                     <p class="text-small mb-0 text-white">{{ chat.text }}</p>
                   </div>
-                  <p class="small text-muted">{{ chat.date }}</p>
+                  <p class="small text-muted float-right">{{ chat.date|date:"j/n/Y, H:i:s" }}</p>
                 </div>
               </div>
             {% endif %}
@@ -106,7 +106,7 @@
               messageInputDom.focus();
             }
             else {
-              alert("Mensaje no puede estar vacío");
+              alert("El mensaje no puede estar vacío");
               messageInputDom.focus();
             }
         };
@@ -123,8 +123,7 @@
         chatSocket.onmessage = function (e) {
           const data = JSON.parse(e.data);
           console.log(data);
-          if (data.username != my_name) add_sender_chat(data);
-          else add_receiver_chat(data);
+          (data.username != my_name) ? add_sender_chat(data) : add_receiver_chat(data);
         }
 
         function add_sender_chat(data) {
@@ -155,8 +154,8 @@
           text_div_div.appendChild(text_div_div_p);
 
           text_div_date = document.createElement('p');
-          text_div_date.classList.add('small', 'text-muted');
-          text_div_date.innerHTML = new Date().toLocaleString();
+          text_div_date.classList.add('small', 'text-muted', 'float-right');
+          text_div_date.innerHTML = new Date().toLocaleString("es-ES");
           text_div.appendChild(text_div_date);
         }
 
@@ -182,7 +181,7 @@
 
           text_div_date = document.createElement('p');
           text_div_date.classList.add('small', 'text-muted');
-          text_div_date.innerHTML = new Date().toLocaleString();
+          text_div_date.innerHTML = new Date().toLocaleString("es-ES");
           text_div.appendChild(text_div_date);
         }
   </script>

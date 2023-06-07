@@ -12,7 +12,7 @@
         <p class="article-content">{{ event.description|safe|linebreaks }}</p>
         {% if event.registered_users.all %}
           <div>
-            {% for user in event.registered_users.all|slice:":50" %}
+            {% for user in event.registered_users.all|slice:":25" %}
               <img class="rounded-circle avatar-group"
                     src="{{ user.profile.image.url }}"
                     width="40"
