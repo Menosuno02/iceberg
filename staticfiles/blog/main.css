@@ -76,7 +76,6 @@ div.form-group:has(> div#div_id_remember) {
 .content-section {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 3px;
   margin-bottom: 20px;
   padding: 20px 20px 15px
 }
@@ -165,9 +164,9 @@ a.article-title:hover {
 .account-img {
   height: 170px;
   margin: 20px 20px 0;
-  padding: 5px;
   transform: translate(-20px, 0);
-  width: 170px
+  width: 170px;
+  border: 7px solid #fff
 }
 
 .online-circle {
@@ -190,6 +189,12 @@ a.article-title:hover {
   position: absolute;
   right: 10px;
   width: 24px
+}
+
+img.card-img-top {
+  position: absolute;
+  height: 227px;
+  border-radius: 0.9rem 0.9rem 0 0
 }
 
 .img-cont {
@@ -279,7 +284,8 @@ a.article-title:hover {
 .account-img-container {
   align-items: center;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  background-size: 100% 100%
 }
 
 .account-heading {

@@ -12,7 +12,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username',
-                  'email', 'password1', 'password2']
+                    'email', 'password1', 'password2']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -30,11 +30,13 @@ class ProfileUpdateForm(forms.ModelForm):
     height = forms.FloatField(widget=forms.HiddenInput(), required=False)
     image = forms.ImageField(label=('Imagen'), error_messages={'invalid': (
         "Solo imágenes")}, widget=forms.FileInput, required=False)
+    banner = forms.ImageField(label=('Foto de encabezado'), error_messages={'invalid': (
+        "Solo imágenes")}, widget=forms.FileInput, required=False)
 
     class Meta:
         model = Profile
         fields = ['bio', 'date_of_birth', 'sex',
-                    'orientation', 'interests', 'image',]
+                    'orientation', 'interests', 'image', 'banner']
         labels = {
             'bio': 'Biografía',
             'date_of_birth': 'Fecha de nacimiento',

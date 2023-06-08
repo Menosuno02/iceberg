@@ -20,6 +20,8 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(
         default='default.jpg', upload_to='fotos_perfil_folder', blank=True, null=True)
+    banner = models.ImageField(
+        default='default-placeholder.png', upload_to='fotos_perfil_folder', blank=True, null=True)
 
     def profile_posts(self):
         return self.user.post_set.all()
