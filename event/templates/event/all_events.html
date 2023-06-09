@@ -18,13 +18,13 @@
               <div>
                 {% for user in event.registered_users.all|slice:":25" %}
                   <img class="rounded-circle avatar-group"
-                       src="{{ user.profile.image.url }}"
-                       width="40"
-                       height="40"
-                       alt="{{ user.username }}"
-                       title="{{ user.username }}"
-                       data-toggle="tooltip"
-                       data-placement="top">
+                        src="{{ user.profile.image.url }}"
+                        width="40"
+                        height="40"
+                        alt="{{ user.username }}"
+                        title="{{ user.username }}"
+                        data-toggle="tooltip"
+                        data-placement="top">
                 {% endfor %}
               </div>
               <br>
@@ -41,9 +41,9 @@
               </form>
             {% endif %}
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 d-flex justify-content-center">
             <img class="float-right rounded-lg shadow img-fluid"
-                 src="{{ event.image.url }}">
+                  src="{{ event.image.url }}">
           </div>
         </div>
       </div>

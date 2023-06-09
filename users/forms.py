@@ -32,11 +32,13 @@ class ProfileUpdateForm(forms.ModelForm):
         "Solo imágenes")}, widget=forms.FileInput, required=False)
     banner = forms.ImageField(label=('Foto de encabezado'), error_messages={'invalid': (
         "Solo imágenes")}, widget=forms.FileInput, required=False)
+    search_options = forms.MultipleChoiceField(label=('Buscar usuarios por...'), 
+        choices=(("Intereses", "Intereses"), ("Edad", "Edad"), ("Sexo", "Sexo"), ("Orientación","Orientación")), required=False)
 
     class Meta:
         model = Profile
         fields = ['bio', 'date_of_birth', 'sex',
-                    'orientation', 'interests', 'image', 'banner']
+                    'orientation', 'interests', 'search_options', 'image', 'banner',]
         labels = {
             'bio': 'Biografía',
             'date_of_birth': 'Fecha de nacimiento',

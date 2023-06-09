@@ -19,6 +19,7 @@ from users.models import Profile
 from .forms import CommentForm
 from .models import Comment, Post
 
+
 """ Página bienvenida """
 def first(request):
     return render(request, 'blog/first.html', {'posts': Post.objects.all()})
@@ -151,17 +152,19 @@ class PostListView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(PostListView, self).get_context_data()
         cu = Profile.objects.get(pk=self.request.user.pk)
-        users = list(Profile.objects.filter(interests__in=cu.interests.all()).exclude(
-            pk=self.request.user.pk).distinct())
-        # Teniendo en cuenta sexo
-        # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(sex=cu.sex)).exclude(pk=self.request.user.pk).distinct())
-        # Teniendo en cuenta orientación
-        # users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(orientation=cu.orientation)).exclude(pk=self.request.user.pk).distinct())
-        # Teniendo en cuenta fecha de nacimiento
-        # if (cu.date_of_birth):
-        #     start_date = cu.date_of_birth - timedelta(days=365*5)
-        #     end_date = cu.date_of_birth + timedelta(days=365*5)
-        #     users = list(Profile.objects.filter(Q(interests__in=cu.interests.all()) | Q(date_of_birth__range=(start_date, end_date))).exclude(pk=self.request.user.pk).distinct())
+        users = Profile.objects.exclude(pk=self.request.user.pk)
+        query=Q()
+        if 'Intereses' in cu.search_options:
+            query |= Q(interests__in=cu.interests.all())
+        if 'Sexo' in cu.search_options:
+            query |= Q(sex=cu.sex)
+        if 'Orientación' in cu.search_options:
+            query |= Q(orientation=cu.orientation)
+        if 'Edad' in cu.search_options and cu.date_of_birth:
+            start_date = cu.date_of_birth - timedelta(days=365*5)
+            end_date = cu.date_of_birth + timedelta(days=365*5)
+            query |= Q(date_of_birth__range=(start_date, end_date))
+        users = list(users.filter(query).distinct())
         if len(users) > 7:
             cnt = 7
         else:

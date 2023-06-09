@@ -14,14 +14,16 @@ class Profile(models.Model):
     sex = models.CharField(max_length=6, blank=True, choices=(
         ('Hombre', 'Hombre'), ('Mujer', 'Mujer'), ('Otro', 'Otro'),))
     orientation = models.CharField(max_length=12, blank=True, choices=(('Heterosexual', 'Heterosexual'), (
-        'Homosexual', 'Homosexual'), ('Bisexual', 'Bisexual'), ('Pansexual', 'Pansexual'), ('Asexual', 'Asexual'), ('Otro', 'Otro'),))
+        'Homosexual', 'Homosexual'), ('Bisexual', 'Bisexual'), ('Pansexual', 'Pansexual'), ('Asexual', 'Asexual'), ('Otra', 'Otra'),))
     interests = models.ManyToManyField('Interest', blank=True)
+    search_options = models.CharField(
+        default="Intereses", max_length=50, blank=True, null=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(
         default='default.jpg', upload_to='fotos_perfil_folder', blank=True, null=True)
     banner = models.ImageField(
-        default='default-placeholder.png', upload_to='fotos_perfil_folder', blank=True, null=True)
+        default='default-placeholder.png', upload_to='fotos_perfil_folder', blank=True, null=True, max_length=200)
 
     def profile_posts(self):
         return self.user.post_set.all()
