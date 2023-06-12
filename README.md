@@ -20,7 +20,7 @@ Entre las tecnologías destacadas utilizadas para desarrollar Iceberg, se encuen
 
  - Perfiles de los usuarios, con nombre y apellidos, foto de perfil, contadores de estadísticas, género, orientación sexual y otros datos
 
-![](https://lh3.googleusercontent.com/pw/AJFCJaUxiVWsXzJtyCc3RW28GUWTgWe-NKiUAzPbnbWEs2J_CWNzsXZ1FGvI8kH0xbudeIMtw5GRYbrMUEYZJMU9PlAJ4Ojsm4QJinWRaYnh5uf2jmjWoIJ6XazK2UMo5xq9PcTkJfJ9i8kwc1k8zdBP2Ks=w1446-h788-s-no?authuser=0)
+![](https://lh3.googleusercontent.com/pw/AJFCJaUQf6TY3nMSZD3dhQrGz75S2oe0dC_ghexLY-R2gZYkOXgV8ZJfK1Wog3O0bDmjB0e60wKSwWw8ridY3ZD34KZeDjyAf_iOZCC5wkVYBnGTFogIsMIR1LS5Ocxw7Z49E6VupZ378LkAnvF0LEmW1fk=w1419-h787-s-no?authuser=0)
 
  - 'Posts' o publicaciones usando CKEditor
 
@@ -40,7 +40,7 @@ Entre las tecnologías destacadas utilizadas para desarrollar Iceberg, se encuen
 
  - Sugerencias de 'posts' en base a los usuarios seguidos y de usuarios acorde a los intereses del usuario
 
-![](https://lh3.googleusercontent.com/pw/AJFCJaUNi3R8DP3YQ342wph5xA93F-bP-Q5rnUQdYwXs4CSpicUsqFrHRJzVilAeboz3C7DYvCWnGq4kV3ncj0gLfsVb_XuKddMb9Ae2bkNBT2NFMUYeUBQbKh2wevwpR1qZFkAH6uaanhCjvwjNIpP-Czs=w1426-h937-s-no?authuser=0)
+![](https://lh3.googleusercontent.com/pw/AJFCJaV9hHQSXC0lqOE-ISHKn0lUWnfcW8toD0kIycAa8TjwOQW3G-xuDNF7DMQZDM3WFCsUGqg5ir6HYBvx_5Kp8AGnNnJCsp3weraN0rE1u5e0rzyXC8BAy5ZJtouP0bUBf_eeXLyXqqCFrJTkMr2Y4Io=w1413-h938-s-no?authuser=0)
 
  - Chat a tiempo real con amigos
 
@@ -52,4 +52,4 @@ Entre las tecnologías destacadas utilizadas para desarrollar Iceberg, se encuen
 
  - Sistema de eventos organizados por los administradores, a los cuáles los usuarios pueden apuntarse y desapuntarse
 
-![](https://lh3.googleusercontent.com/pw/AJFCJaWaclK3oCxIKo_omW1apOdYIm48rTyDGW2no3pexlzxgcIxJBWYlsmct1g6X9B02z4S0ugL-W6qPEdRTebJIfXSULcHdiTMsinNvhS5wyLZEzVS4CIrtYppLWuSP3pJ_aW4YB7kzyq7rEDxyI_lEoY=w1434-h772-s-no?authuser=0)
+![](https://lh3.googleusercontent.com/pw/AJFCJaWxFRHSxEVNEV8oeXSbyrGLgVOz01w1lBF-AE5PZnUD0qfg3QaI8Zaj24uPLYfOrXL9p394CyK-C2L4uJFWIHDm5FeJZi_nhd6qtXLtR8vGWtpSIl5a4dE-Ti6tshdEhg3uqyyxSIDry63CGVt3HmE=w1426-h937-s-no?authuser=0)
