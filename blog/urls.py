@@ -22,5 +22,7 @@ urlpatterns = [
     path('saved-posts/', AllSaveView, name='all-save'),
     path('post/comment/like/', LikeCommentView, name='comment-like'),
     path('about/', views.about, name='blog-about'),
+    path('terms/', views.terms, name='blog-terms'),
+    path('privacy/', views.privacy, name='blog-privacy'),
     path('search/', views.search, name='search'),
 ]

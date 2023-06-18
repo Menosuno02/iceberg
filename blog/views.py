@@ -287,9 +287,15 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-""" Página de información """
+""" Páginas de información """
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    return render(request, 'blog/about.html', {'title': 'Sobre Iceberg'})
+
+def terms(request):
+    return render(request, 'blog/terms.html', {'title': 'Términos de servicio'})
+
+def privacy(request):
+    return render(request, 'blog/privacy.html', {'title': 'Política de Privacidad'})
 
 
 """ Buscar por título/usuario """
