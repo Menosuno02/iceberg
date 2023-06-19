@@ -2,24 +2,30 @@
 {% load static %}
 {% block content %}
   <style type="text/css">
-	.material-icons{
-		font-size: 30px;
-	}
-	.material-icons:hover{
-		cursor: pointer;
-	}
-	.confirmar-sol{
-		color: green;
-	}
-	.confirmar-sol:hover {
-		opacity: 0.3;
-	}
-	.declinar-sol:hover {
-		opacity: 0.3;
-	}
-	.declinar-sol{
-		color: red;
-	}
+    .material-icons{
+      font-size: 30px
+    }
+    .material-icons:hover{
+      cursor: pointer
+    }
+    .confirmar-sol{
+      color: green;
+      transition: .3s all ease;
+      -o-transition: .3s all ease;
+      -webkit-transition: .3s all ease
+    }
+    .confirmar-sol:hover {
+      opacity: 0.7
+    }
+    .declinar-sol:hover {
+      opacity: 0.7
+    }
+    .declinar-sol{
+      color: red;
+      transition: .3s all ease;
+      -o-transition: .3s all ease;
+      -webkit-transition: .3s all ease
+    }
   </style>
   <div class="col-md-12">
     <div class="content-section">
