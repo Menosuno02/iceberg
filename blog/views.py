@@ -151,26 +151,27 @@ class PostListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostListView, self).get_context_data()
-        cu = Profile.objects.get(pk=self.request.user.pk)
-        users = Profile.objects.exclude(pk=self.request.user.pk)
-        query=Q()
-        if 'Intereses' in cu.search_options:
-            query |= Q(interests__in=cu.interests.all())
-        if 'Sexo' in cu.search_options:
-            query |= Q(sex=cu.sex)
-        if 'Orientación' in cu.search_options:
-            query |= Q(orientation=cu.orientation)
-        if 'Edad' in cu.search_options and cu.date_of_birth:
-            start_date = cu.date_of_birth - timedelta(days=365*5)
-            end_date = cu.date_of_birth + timedelta(days=365*5)
-            query |= Q(date_of_birth__range=(start_date, end_date))
-        users = list(users.filter(query).distinct())
-        if len(users) > 7:
-            cnt = 7
-        else:
-            cnt = len(users)
-        random_users = random.sample(users, cnt)
-        context['random_users'] = random_users
+        if (self.request.user.pk is int):
+            cu = Profile.objects.get(pk=self.request.user.pk)
+            users = Profile.objects.exclude(pk=self.request.user.pk)
+            query=Q()
+            if 'Intereses' in cu.search_options:
+                query |= Q(interests__in=cu.interests.all())
+            if 'Sexo' in cu.search_options:
+                query |= Q(sex=cu.sex)
+            if 'Orientación' in cu.search_options:
+                query |= Q(orientation=cu.orientation)
+            if 'Edad' in cu.search_options and cu.date_of_birth:
+                start_date = cu.date_of_birth - timedelta(days=365*5)
+                end_date = cu.date_of_birth + timedelta(days=365*5)
+                query |= Q(date_of_birth__range=(start_date, end_date))
+            users = list(users.filter(query).distinct())
+            if len(users) > 7:
+                cnt = 7
+            else:
+                cnt = len(users)
+            random_users = random.sample(users, cnt)
+            context['random_users'] = random_users
         return context
 
 
