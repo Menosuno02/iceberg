@@ -151,7 +151,7 @@ class PostListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostListView, self).get_context_data()
-        if (self.request.user.pk is int):
+        if (self.request.user.pk is not None):
             cu = Profile.objects.get(pk=self.request.user.pk)
             users = Profile.objects.exclude(pk=self.request.user.pk)
             query=Q()
