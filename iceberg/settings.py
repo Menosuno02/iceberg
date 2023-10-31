@@ -175,7 +175,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         },
         'APP': {
-            'client_id': '1095405768145-48v21bilq5fvk83r1s3allqnl2r2moai.apps.googleusercontent.com',
+            'client_id': 'YOUR GOOGLE APP CLIENT ID',
             'secret': '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',
             'key': ''
         }
@@ -187,7 +187,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'read:org',
         ],
         'APP': {
-            'client_id': 'f64c09ed951e53d92cd4',
+            'client_id': 'YOUR GITHUB AUTH APP CLIENT ID',
             'secret': 'e4e5f4c662f2b82da14bbae75eaaf3be73bd1d53',
             'key': ''
         }
